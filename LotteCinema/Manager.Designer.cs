@@ -53,6 +53,7 @@
             this.cb_film = new System.Windows.Forms.ComboBox();
             this.cinemaDataSet = new LotteCinema.cinemaDataSet();
             this.cinemaDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cbThongke_TatCaPhim = new System.Windows.Forms.CheckBox();
             this.tapControl1.SuspendLayout();
             this.tp_film.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_film)).BeginInit();
@@ -189,6 +190,7 @@
             // 
             // gb_statistic
             // 
+            this.gb_statistic.Controls.Add(this.cbThongke_TatCaPhim);
             this.gb_statistic.Controls.Add(this.btn_statistic);
             this.gb_statistic.Controls.Add(this.dtpk_dateTo);
             this.gb_statistic.Controls.Add(this.dtpk_dateFrom);
@@ -200,7 +202,7 @@
             this.gb_statistic.Controls.Add(this.cb_film);
             this.gb_statistic.Location = new System.Drawing.Point(15, 65);
             this.gb_statistic.Name = "gb_statistic";
-            this.gb_statistic.Size = new System.Drawing.Size(312, 282);
+            this.gb_statistic.Size = new System.Drawing.Size(334, 282);
             this.gb_statistic.TabIndex = 4;
             this.gb_statistic.TabStop = false;
             this.gb_statistic.Text = "Thống kê";
@@ -294,6 +296,17 @@
             this.cinemaDataSetBindingSource.DataSource = this.cinemaDataSet;
             this.cinemaDataSetBindingSource.Position = 0;
             // 
+            // cbThongke_TatCaPhim
+            // 
+            this.cbThongke_TatCaPhim.AutoSize = true;
+            this.cbThongke_TatCaPhim.Location = new System.Drawing.Point(145, 125);
+            this.cbThongke_TatCaPhim.Name = "cbThongke_TatCaPhim";
+            this.cbThongke_TatCaPhim.Size = new System.Drawing.Size(82, 17);
+            this.cbThongke_TatCaPhim.TabIndex = 13;
+            this.cbThongke_TatCaPhim.Text = "Tất cả phim";
+            this.cbThongke_TatCaPhim.UseVisualStyleBackColor = true;
+            this.cbThongke_TatCaPhim.CheckedChanged += new System.EventHandler(this.cbThongke_TatCaPhim_CheckedChanged);
+            // 
             // fManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -345,5 +358,6 @@
         private System.Windows.Forms.Button btn_insertShowtime;
         private System.Windows.Forms.Button btn_updateShowtime;
         private System.Windows.Forms.Button btn_deleteShowtime;
+        private System.Windows.Forms.CheckBox cbThongke_TatCaPhim;
     }
 }

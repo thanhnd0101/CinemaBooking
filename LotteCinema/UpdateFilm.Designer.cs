@@ -84,6 +84,11 @@
             // numericUpDownNamSanXuat
             // 
             this.numericUpDownNamSanXuat.Location = new System.Drawing.Point(112, 197);
+            this.numericUpDownNamSanXuat.Maximum = new decimal(new int[] {
+            1410065408,
+            2,
+            0,
+            0});
             this.numericUpDownNamSanXuat.Name = "numericUpDownNamSanXuat";
             this.numericUpDownNamSanXuat.Size = new System.Drawing.Size(120, 20);
             this.numericUpDownNamSanXuat.TabIndex = 39;
@@ -130,6 +135,11 @@
             // numericUpDownThoiLuong
             // 
             this.numericUpDownThoiLuong.Location = new System.Drawing.Point(112, 141);
+            this.numericUpDownThoiLuong.Maximum = new decimal(new int[] {
+            1410065408,
+            2,
+            0,
+            0});
             this.numericUpDownThoiLuong.Name = "numericUpDownThoiLuong";
             this.numericUpDownThoiLuong.Size = new System.Drawing.Size(120, 20);
             this.numericUpDownThoiLuong.TabIndex = 34;
@@ -150,6 +160,7 @@
             this.dtpkNgayCongChieu.Size = new System.Drawing.Size(19, 20);
             this.dtpkNgayCongChieu.TabIndex = 32;
             this.dtpkNgayCongChieu.Value = new System.DateTime(2018, 12, 13, 3, 58, 34, 0);
+            this.dtpkNgayCongChieu.ValueChanged += new System.EventHandler(this.dtpkNgayCongChieu_ValueChanged);
             // 
             // tbNgayCongChieu
             // 

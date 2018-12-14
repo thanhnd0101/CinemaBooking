@@ -113,8 +113,16 @@ namespace LotteCinema
                 cmd.Parameters.Add("@phim", SqlDbType.Int);
                 cmd.Parameters.Add("@ngayBD", SqlDbType.Date);
                 cmd.Parameters.Add("@ngayKT", SqlDbType.Date);
+
                 cmd.Parameters["@rap"].Value = getCinemaID();
-                cmd.Parameters["@phim"].Value = int.Parse(cb_film.SelectedValue.ToString());
+                if (cbThongke_TatCaPhim.Checked)
+                {
+                    cmd.Parameters["@phim"].Value = DBNull.Value;
+                }
+                else
+                {
+                    cmd.Parameters["@phim"].Value = int.Parse(cb_film.SelectedValue.ToString());
+                }             
                 cmd.Parameters["@ngayBD"].Value = dtpk_dateFrom.Value.Date;
                 cmd.Parameters["@ngayKT"].Value = dtpk_dateTo.Value.Date;
                 conn.Open();
@@ -145,7 +153,6 @@ namespace LotteCinema
         {
             AddFilm addfilm = new AddFilm();
             addfilm.Show();
-            fManager_Load(sender,e);
         }
 
         private void tb_dateFrom_TextChanged(object sender, EventArgs e)
@@ -176,11 +183,22 @@ namespace LotteCinema
                 UpdateFilm updateFilm = new UpdateFilm(idPhim, tuaphim, theloai, daodien, ngaycongchieu, thoiluong, nuocsx,
                     namsx, tinhtrang);
                 updateFilm.Show();
-
             }
             else
             {
                 MessageBox.Show("Vui long chon Phim");
+            }
+        }
+
+        private void cbThongke_TatCaPhim_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbThongke_TatCaPhim.Checked)
+            {
+                cb_film.Enabled = false;
+            }
+            else
+            {
+                cb_film.Enabled = true;
             }
         }
     }

@@ -128,6 +128,11 @@
             // numericUpDownThoiLuong
             // 
             this.numericUpDownThoiLuong.Location = new System.Drawing.Point(97, 170);
+            this.numericUpDownThoiLuong.Maximum = new decimal(new int[] {
+            1316134912,
+            2328,
+            0,
+            0});
             this.numericUpDownThoiLuong.Name = "numericUpDownThoiLuong";
             this.numericUpDownThoiLuong.Size = new System.Drawing.Size(120, 20);
             this.numericUpDownThoiLuong.TabIndex = 15;
@@ -174,6 +179,11 @@
             // numericUpDownNamSanXuat
             // 
             this.numericUpDownNamSanXuat.Location = new System.Drawing.Point(97, 226);
+            this.numericUpDownNamSanXuat.Maximum = new decimal(new int[] {
+            -727379968,
+            232,
+            0,
+            0});
             this.numericUpDownNamSanXuat.Name = "numericUpDownNamSanXuat";
             this.numericUpDownNamSanXuat.Size = new System.Drawing.Size(120, 20);
             this.numericUpDownNamSanXuat.TabIndex = 21;

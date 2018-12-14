@@ -24,7 +24,8 @@ namespace LotteCinema
         String tinhtrang;
         public UpdateFilm(int id,String tua,String theloai,String daodien,DateTime ngaycongchieu,int thoiluong,
             String nuocsx,int namsx,String tinhtrang)
-        {
+        {        
+            InitializeComponent();
             this.idPhim = id;
             this.tuaphim = tua;
             this.theloai = theloai;
@@ -34,8 +35,6 @@ namespace LotteCinema
             this.nuocsx = nuocsx;
             this.namsx = namsx;
             this.tinhtrang = tinhtrang;
-       
-            InitializeComponent();
         }
 
         private void UpdateFilm_Load(object sender, EventArgs e)
@@ -75,7 +74,7 @@ namespace LotteCinema
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     //MessageBox.Show(cb_film.SelectedValue.ToString(), "id film");
-                    cmd.Parameters.Add("@id", SqlDbType.Int);
+                    cmd.Parameters.Add("@idphim", SqlDbType.Int);
                     cmd.Parameters.Add("@tuaphim", SqlDbType.NVarChar);
                     cmd.Parameters.Add("@theloai", SqlDbType.NVarChar);
                     cmd.Parameters.Add("@daodien", SqlDbType.NVarChar);
@@ -85,7 +84,7 @@ namespace LotteCinema
                     cmd.Parameters.Add("@namsx", SqlDbType.Int);
                     cmd.Parameters.Add("@tinhtrang", SqlDbType.NVarChar);
 
-                    cmd.Parameters["@id"].Value = idPhim;
+                    cmd.Parameters["@idphim"].Value = idPhim;
                     cmd.Parameters["@tuaphim"].Value = tbTuaPhim.Text;
                     cmd.Parameters["@theloai"].Value = cbTheLoai.Text;
                     cmd.Parameters["@daodien"].Value = tbDaoDien.Text;
@@ -99,9 +98,15 @@ namespace LotteCinema
                     cmd.ExecuteNonQuery();
                     conn.Close();
                 }
-                MessageBox.Show("Them Thanh cong");
+                MessageBox.Show("Cập nhật thành công");
                 this.Close();
             }
         }
+
+        private void dtpkNgayCongChieu_ValueChanged(object sender, EventArgs e)
+        {
+            tbNgayCongChieu.Text = Date(dtpkNgayCongChieu.Value);
+        }
+
     }
 }
